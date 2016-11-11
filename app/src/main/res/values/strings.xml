@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">criph</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_config">ConfigActivity</string>
+    <string name="title_activity_enc">EncActivity</string>
+    <string name="title_activity_dec" />
+</resources>
