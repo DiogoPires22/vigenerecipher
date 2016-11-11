@@ -16,7 +16,12 @@ public class Security {
                 continue;
             }
             // ascII A=65 A problem=0 ascii A -65= A prob;em
-            res += (char)((c + (key.charAt(j)-65) - 2* 0) % 26+0);
+
+            int pi=c-65;
+            int kj=key.toUpperCase().charAt(j)-65;
+
+
+            res += (char)(((pi + kj) % 26)+65);
             j = ++j % key.length();
         }
         return res;
