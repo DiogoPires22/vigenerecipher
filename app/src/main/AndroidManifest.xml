@@ -31,13 +31,10 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-        android:name=".EncActivity"
-        android:label="@string/title_activity_enc"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".DecActivity"
-            android:label="@string/title_activity_dec"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".EncActivity"
+            android:label="@string/title_activity_enc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DecActivity"></activity>
     </application>
 
 </manifest>

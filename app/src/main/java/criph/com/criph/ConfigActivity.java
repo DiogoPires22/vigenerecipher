@@ -32,9 +32,14 @@ public class ConfigActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _config=new ConfigSettings(getApplicationContext());
-        //change status if a first time
-        if(_config.isFirstTime())
-            _config.setFirstTime();
+        Button goHome =(Button) findViewById(R.id.goHome);
+
+        if(_config.isFirstTime()){
+
+            //hide go back button if isFirstTime
+            goHome.setVisibility(View.INVISIBLE);
+        }
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
@@ -43,6 +48,8 @@ public class ConfigActivity extends AppCompatActivity {
         //bind a alter button
         final Button alterButton = (Button) findViewById(R.id.alterButton);
         final EditText key = (EditText) findViewById(R.id.key);
+
+
 
 
         //instance of key repository
@@ -57,15 +64,32 @@ public class ConfigActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 hash.setHash(key.getText().toString());
-
+                //validate a hash, if valid go to main activity and save a first time status
                 if(hash.Validate()){
+                    //change status if a first time
+                    if(_config.isFirstTime()){
+                        _config.setFirstTime();
+                    }
+
+                    //add a hash
                     _r.Add(hash);
 
                     Intent i= new Intent(getBaseContext(),MainActivity.class);
                     startActivity(i);
                 }else{
+
+                    //show a toast message if hash is invalid
                     Toast.makeText(getApplicationContext(),"Chave Inválida!",Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+
+        //event for go home button
+        goHome.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent i= new Intent(getBaseContext(),MainActivity.class);
+                startActivity(i);
             }
         });
 

@@ -1,5 +1,6 @@
 package criph.com.criph;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,7 @@ public class EncActivity extends AppCompatActivity {
 
 
         Button generate =(Button) findViewById(R.id.generate);
+        Button goHome =(Button) findViewById(R.id.goHome);
         final TextView msgText =(TextView) findViewById(R.id.msg);
         final TextView resultText=(TextView) findViewById(R.id.returnText);
         generate.setOnClickListener(new Button.OnClickListener() {
@@ -32,6 +34,14 @@ public class EncActivity extends AppCompatActivity {
                    resultText.setText(Security.encrypt(text,_k.GetHash().getHash()));
 
                }
+        });
+
+        //event for go home button
+        goHome.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent i= new Intent(getBaseContext(),MainActivity.class);
+                startActivity(i);
+            }
         });
     }
 
