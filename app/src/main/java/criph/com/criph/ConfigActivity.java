@@ -31,6 +31,10 @@ public class ConfigActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_config);
+
         _config=new ConfigSettings(getApplicationContext());
         Button goHome =(Button) findViewById(R.id.goHome);
 
@@ -41,8 +45,7 @@ public class ConfigActivity extends AppCompatActivity {
         }
 
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config);
+
 
 
         //bind a alter button

@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="criph.com.criph.MainActivity"
-    android:background="@android:color/holo_green_light">
+    android:background="@color/common_plus_signin_btn_text_dark_pressed">
 
 
     <Button
@@ -18,7 +18,7 @@
         android:layout_height="200px"
         android:id="@+id/descriptografar"
 
-        android:background="@color/colorAccent"
+        android:background="@color/common_action_bar_splitter"
 
 
        />
@@ -29,18 +29,19 @@
         android:layout_height="200px"
         android:id="@+id/configuracao"
 
-        android:background="@color/colorAccent"
+        android:background="@color/common_google_signin_btn_text_dark_focused"
         tools:text="Config"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/criptografar" />
+        android:layout_alignStart="@+id/criptografar"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     <Button
         android:text="Encrypt"
         android:layout_width="match_parent"
         android:layout_height="200px"
         android:id="@+id/criptografar"
-        android:background="@color/colorPrimaryDark"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="130dp" />
+        android:background="@color/common_action_bar_splitter"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/descriptografar"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

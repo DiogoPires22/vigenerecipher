@@ -6,6 +6,10 @@ import android.preference.PreferenceManager;
 
 /**
  * Created by usuario on 11/11/16.
+ *
+ *
+ *
+ * It`s a prototype of repository , simulating a database connection
  */
 public class KeyRepository {
 
@@ -13,12 +17,15 @@ public class KeyRepository {
     private Context c;
     private SharedPreferences preferences;
 
+
+    //Keyrepository` constructor , set a application context
     public KeyRepository(Context applicationContext) {
         c=applicationContext;
         preferences= PreferenceManager.getDefaultSharedPreferences(c);
     }
 
 
+    //this method get a hash
     public Key GetHash(){
 
         String hashText=preferences.getString("hash","");
@@ -28,6 +35,8 @@ public class KeyRepository {
 
         return k;
     }
+
+
     public void Add(Key k) {
         preferences.edit().putString("hash",k.getHash()).apply();
 
